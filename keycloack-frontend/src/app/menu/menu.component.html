@@ -12,7 +12,7 @@
             </a>
             </li>
             <li *ngIf="isLogged" class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" routerLink="/lista" >
                 <i class="far fa-list-alt"></i> Lista
             </a>
             </li>   
@@ -22,7 +22,7 @@
                 </a>
             </li>     
             <li *ngIf="isAdmin" class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" routerLink="/create">
                     <i class="fas fa-plus-circle"></i> Novo
                 </a>
             </li>   

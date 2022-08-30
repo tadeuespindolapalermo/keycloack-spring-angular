@@ -9,6 +9,7 @@ import { MessageService } from './../services/message.service';
 export class HomeComponent implements OnInit {
 
   username: string | undefined;
+  isLogging = true;
 
   constructor(private messageService: MessageService) { }
 
@@ -18,7 +19,11 @@ export class HomeComponent implements OnInit {
     //}, err => console.log(err));
 
     this.messageService.getMessage().subscribe({
-      next: (res) => this.username = res[`text`],
+      next: (res) => {
+        console.log('receiving message');
+        this.username = res[`text`];
+        this.isLogging = false;
+      },      
       error: (err) => console.error(err),
       complete: () => console.info('completed. OK') 
     });

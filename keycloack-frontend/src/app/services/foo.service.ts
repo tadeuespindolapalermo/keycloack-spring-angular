@@ -9,6 +9,7 @@ import { Foo } from '../models/foo';
 export class FooService {
 
   fooURL = 'http://localhost:8080/foo/';
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type' : 'application/json'

@@ -32,7 +32,10 @@
                 <a class="nav-link" href="#">
                     Bem-vindo {{ username }}
                 </a>
-            </li>   
+            </li>
+            <button *ngIf="!isLogged" class="btn btn-outline-warning mr-3" routerLink="/signup">
+                <i class="fas fa-user-plus"></i> Criar Conta
+            </button>   
             <button *ngIf="!isLogged" class="btn btn-outline-success" (click)="login()">
                 <i class="fas fa-sign-in-alt"></i> Iniciar Sessão
             </button>  

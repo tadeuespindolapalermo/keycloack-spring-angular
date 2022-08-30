@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4" *ngIf="!isLogging">
     <div class="jumbotron">
         <h1 class="display-4" *ngIf="!username">Sessão não iniciada.</h1>
         <h1 class="display-4" *ngIf="username">Olá, {{ username }}</h1>

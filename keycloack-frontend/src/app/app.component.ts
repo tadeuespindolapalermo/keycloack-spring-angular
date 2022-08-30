@@ -40,11 +40,14 @@ export class AppComponent {
     this.oauthService.loadDiscoveryDocument()
       .then(() => this.oauthService.tryLogin())
       .then(() => {
-        if (this.oauthService.getIdentityClaims()) {
+        //if (this.oauthService.getIdentityClaims()) {
+        if (this.oauthService.hasValidIdToken()) {
           this.isLogged = this.loginService.getIsLogged();
           this.isAdmin = this.loginService.getIsAdmin();
           this.username = this.loginService.getUsername();
-          this.messageService.sendMessage(this.loginService.getUsername());
+          this.messageService.sendMessage(this.username);
+        } else {
+          this.messageService.sendMessage('');
         }
       });
   }
